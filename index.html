@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Jquery.DIBrotate</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.DIBrotate.js"></script>
+    </head>
+    <body>
+        <style>
+                div.rotContainer {width: 520px;margin: 0 auto;}
+        </style>
+        <script type="text/javascript">
+            $(function () {
+                //the array ARR will contain the list of images
+                var arr = [];
+                //too lazy to type everything ...
+                for (var x = 1; x <= 9; x++) {
+                    var staticLink = "img/iphone4/iphone4_640x378_";
+                    arr.push(staticLink + x + ".jpg");
+                }
+                // the widget rotate the image with the peak arr picture list
+                $("#mousemove").DIBrotate({ images: arr, method: 'mousemove', 'cycle': 3, direction: "backward" });
+                //$("#mousemove").DIBrotate({ images: arr, method: 'click', 'cycle': 1, 'resetMargin': 10 });
+                //$("#mousemove")..DIBrotate({ images: arr, method: 'auto', autoscrollspeed: 100 });
+            });
+        </script>
+        <h1>Rotation</h1>
+        <h2>Demos</h2>
+        <div class="rotContainer">
+            <div>
+                <img alt="new" src="img/iphone4/iphone4_640x378_1.jpg" id="mousemove" width="513" height="303" />
+            </div>
+        </div>
+    </body>
+</html>
